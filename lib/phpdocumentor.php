@@ -1,6 +1,6 @@
 <?php
 class phpdocumentor {
-    public static function run($inpath,$outpath,$cachepath,$ignore,$title,$sourcecode,$parseprivate){
+    public static function run($inpath,$outpath,$cachepath,$ignore,$title,$sourcecode,$parseprivate,$template='responsive-twig'){
         $sourcecode_ = $sourcecode ? '--sourcecode' : '';
         $parseprivate_ = $parseprivate ? '--parseprivate' : '';
         $ignore_ = '';
@@ -15,7 +15,7 @@ class phpdocumentor {
         $result = shell_exec('php5 '.dirname(__FILE__).'/phpDocumentor.phar run'.
                             ' -d '.$inpath->SERVERPATH().
                             ' -t '.$outpath->SERVERPATH().
-                            ' --template="responsive-twig" --template="xml"'.
+                            ' --template="'.$template.'"'.
                             ' --cache-folder '.$cachepath->SERVERPATH().
                             ' '.$ignore_.
                             ' '.$sourcecode_.
