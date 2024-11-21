@@ -12,7 +12,7 @@ class phpdocumentor {
             mkdir($outpath->SERVERPATH(), 0777, true);}
         if (!file_exists($cachepath->SERVERPATH())) {
             mkdir($cachepath->SERVERPATH(), 0777, true);}
-        $result = shell_exec('php5 '.dirname(__FILE__).'/phpDocumentor.phar run'.
+        $result = shell_exec('php '.dirname(__FILE__).'/phpDocumentor.phar run'.
                             ' -d '.$inpath->SERVERPATH().
                             ' -t '.$outpath->SERVERPATH().
                             ' --template="'.$template.'"'.
